@@ -10,7 +10,13 @@
 		<p>Bar!</p>
 		<a href="http://estudiantes-isa.uva.es">link</a>
 		
-		{{posts}}
+		{% for post in posts %}
+			<div>
+				<p> publicado: {{ post.published_date }}</p>
+				<h2><a href="">{{ post.title }}</a></h2>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 		
 		<div>
             <p>published: 4.10.2019, 16:19</p>
